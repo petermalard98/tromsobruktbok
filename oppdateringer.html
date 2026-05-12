@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oppdateringer fra Tromsø Bruktbokhandel – nye bøker, LEGO-sett og kommende events.">
+  <title>Oppdateringer – Tromsø Bruktbokhandel</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
+    <div class="container nav__inner">
+      <a href="/index.html" class="nav__logo" aria-label="Tromsø Bruktbokhandel – til forsiden">
+        Tromsø Bruktbokhandel
+        <span>Est. tidlig 1990-tallet</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/index.html">Forside</a></li>
+        <li><a href="/butikken.html">Butikken</a></li>
+        <li><a href="/oppdateringer.html">Oppdateringer</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav-links" id="hamburger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="container">
+        <p class="page-header__eyebrow">Nyheter</p>
+        <h1 class="page-header__title">Oppdateringer</h1>
+        <p class="page-header__subtitle">
+          Nye bøker, LEGO-sett, events og andre nyheter fra butikken.
+          Oppdateres fortløpende.
+        </p>
+      </div>
+    </div>
+
+    <!-- FILTER + GRID -->
+    <section class="section" aria-labelledby="oppdateringer-heading">
+      <div class="container">
+
+        <div
+          class="filter-tabs"
+          role="group"
+          aria-label="Filtrer oppdateringer etter kategori"
+          id="filter-tabs">
+          <button class="filter-tab active" data-filter="Alle"   aria-pressed="true" >Alle</button>
+          <button class="filter-tab"        data-filter="Bøker"  aria-pressed="false">Bøker</button>
+          <button class="filter-tab"        data-filter="LEGO"   aria-pressed="false">LEGO</button>
+          <button class="filter-tab"        data-filter="Event"  aria-pressed="false">Events</button>
+          <button class="filter-tab"        data-filter="Annet"  aria-pressed="false">Annet</button>
+        </div>
+
+        <h2 id="oppdateringer-heading" class="sr-only">Oppdateringer</h2>
+        <div class="cards" id="oppdateringer-grid" aria-live="polite" aria-label="Oppdateringer">
+          <div class="empty-state">
+            <div class="empty-state__icon">⏳</div>
+            <p>Laster...</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logo">Tromsø Bruktbokhandel</div>
+      <nav class="footer__links" aria-label="Bunnnavigasjon">
+        <a href="/index.html">Forside</a>
+        <a href="/butikken.html">Butikken</a>
+        <a href="/oppdateringer.html">Oppdateringer</a>
+        <a href="/kontakt.html">Kontakt</a>
+        <a href="https://www.facebook.com/profile.php?id=100063525463444" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </nav>
+      <p>Kirkegata 6, 9008 Tromsø &nbsp;·&nbsp; <a href="tel:+4777686974">77 68 69 74</a></p>
+      <p style="margin-top:.5rem">© 2026 Tromsø Bruktbokhandel</p>
+    </div>
+  </footer>
+
+  <!-- Visually hidden utility class -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

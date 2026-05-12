@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt Tromsø Bruktbokhandel – adresse, åpningstider, telefon og kart. Kirkegata 6, Tromsø.">
+  <title>Kontakt – Tromsø Bruktbokhandel</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
+    <div class="container nav__inner">
+      <a href="/index.html" class="nav__logo" aria-label="Tromsø Bruktbokhandel – til forsiden">
+        Tromsø Bruktbokhandel
+        <span>Est. tidlig 1990-tallet</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/index.html">Forside</a></li>
+        <li><a href="/butikken.html">Butikken</a></li>
+        <li><a href="/oppdateringer.html">Oppdateringer</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav-links" id="hamburger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="container">
+        <p class="page-header__eyebrow">Besøk oss</p>
+        <h1 class="page-header__title">Kontakt</h1>
+        <p class="page-header__subtitle">
+          Du finner oss sentralt i Tromsø sentrum, med kort avstand til andre
+          butikker og attraksjoner.
+        </p>
+      </div>
+    </div>
+
+    <!-- KONTAKTINFO + KART -->
+    <section class="section" aria-labelledby="kontakt-heading">
+      <div class="container">
+        <h2 id="kontakt-heading" class="sr-only">Kontaktinformasjon og kart</h2>
+        <div class="contact-grid">
+
+          <!-- VENSTRE: INFO + ÅPNINGSTIDER -->
+          <div>
+            <div class="contact-info">
+              <div class="contact-info__item">
+                <label>Adresse</label>
+                <span id="kontakt-adresse">Kirkegata 6, 9008 Tromsø</span>
+              </div>
+              <div class="contact-info__item">
+                <label>Telefon</label>
+                <a href="tel:+4777686974" id="kontakt-tlf">77 68 69 74</a>
+              </div>
+              <div class="contact-info__item">
+                <label>E-post</label>
+                <a href="mailto:tbbhpost@gmail.com" id="kontakt-epost">tbbhpost@gmail.com</a>
+              </div>
+              <div class="contact-info__item">
+                <label>Facebook</label>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063525463444"
+                  id="kontakt-facebook"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Tromsø Bruktbokhandel på Facebook ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- ÅPNINGSTIDER -->
+            <div style="margin-top:2.5rem">
+              <h2 style="margin-bottom:.75rem">Åpningstider</h2>
+              <div class="divider" aria-hidden="true"></div>
+              <table class="hours-table" aria-label="Åpningstider per ukedag">
+                <tbody id="hours-body">
+                  <!-- Rendres dynamisk fra /data/innstillinger.json – statisk fallback: -->
+                  <tr><td>Mandag</td>  <td>10:00 – 17:00</td></tr>
+                  <tr><td>Tirsdag</td> <td>10:00 – 17:00</td></tr>
+                  <tr><td>Onsdag</td>  <td>10:00 – 17:00</td></tr>
+                  <tr><td>Torsdag</td> <td>10:00 – 18:00</td></tr>
+                  <tr><td>Fredag</td>  <td>10:00 – 17:00</td></tr>
+                  <tr><td>Lørdag</td>  <td>10:00 – 16:00</td></tr>
+                  <tr><td>Søndag</td>  <td class="closed">Stengt</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- HØYRE: KART -->
+          <div>
+            <h2 style="margin-bottom:.75rem">Finn oss</h2>
+            <div class="divider" aria-hidden="true"></div>
+            <div class="map-wrapper">
+              <iframe
+                title="Kart over Tromsø Bruktbokhandel – Kirkegata 6"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=18.945%2C69.647%2C18.963%2C69.652&amp;layer=mapnik&amp;marker=69.6490%2C18.9537"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer">
+              </iframe>
+            </div>
+            <p style="margin-top:.75rem;font-size:.83rem;color:var(--text-muted)">
+              <a
+                href="https://www.openstreetmap.org/?mlat=69.6490&amp;mlon=18.9537#map=17/69.6490/18.9537"
+                target="_blank"
+                rel="noopener noreferrer">
+                Åpne større kart ↗
+              </a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logo">Tromsø Bruktbokhandel</div>
+      <nav class="footer__links" aria-label="Bunnnavigasjon">
+        <a href="/index.html">Forside</a>
+        <a href="/butikken.html">Butikken</a>
+        <a href="/oppdateringer.html">Oppdateringer</a>
+        <a href="/kontakt.html">Kontakt</a>
+        <a href="https://www.facebook.com/profile.php?id=100063525463444" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </nav>
+      <p>Kirkegata 6, 9008 Tromsø &nbsp;·&nbsp; <a href="tel:+4777686974">77 68 69 74</a></p>
+      <p style="margin-top:.5rem">© 2026 Tromsø Bruktbokhandel</p>
+    </div>
+  </footer>
+
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

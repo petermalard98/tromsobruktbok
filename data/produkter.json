@@ -1,0 +1,28 @@
+{
+  "entries": [
+    {
+      "navn": "The Hobbit (norsk utgave)",
+      "kategori": "Bøker",
+      "beskrivelse": "J.R.R. Tolkien. Innbundet, god stand.",
+      "bilde": ""
+    },
+    {
+      "navn": "LEGO City – Brannstasjon #60215",
+      "kategori": "LEGO",
+      "beskrivelse": "Komplett sett med originalemballasje.",
+      "bilde": ""
+    },
+    {
+      "navn": "Dragon Ball Z vol. 1–10",
+      "kategori": "Manga",
+      "beskrivelse": "Norsk utgave. Meget god stand.",
+      "bilde": ""
+    },
+    {
+      "navn": "Catan – Strategispill",
+      "kategori": "Brettspill",
+      "beskrivelse": "Komplett. Alle brikker og kort inkludert.",
+      "bilde": ""
+    }
+  ]
+}

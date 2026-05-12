@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bildeplassholder – Tromsø Bruktbokhandel">
+  <rect width="400" height="300" fill="#1a2035"/>
+
+  <!-- Background glow -->
+  <ellipse cx="200" cy="230" rx="190" ry="28" fill="#c8a96e" opacity="0.04"/>
+  <ellipse cx="200" cy="150" rx="140" ry="60" fill="#4ecdc4" opacity="0.025"/>
+
+  <!-- Shelf board -->
+  <rect x="8" y="240" width="384" height="7" rx="2" fill="#2a3050"/>
+
+  <!-- Book 1: tall, dark blue, teal spine -->
+  <rect x="22" y="135" width="28" height="105" rx="2" fill="#1e3a5f"/>
+  <rect x="22" y="135" width="5" height="105" fill="#4ecdc4" opacity="0.65"/>
+
+  <!-- Book 2: medium warm brown -->
+  <rect x="54" y="158" width="21" height="82" rx="2" fill="#3d2b1f"/>
+  <rect x="54" y="158" width="3" height="82" fill="#c8a96e" opacity="0.8"/>
+
+  <!-- Book 3: wider, dark green -->
+  <rect x="79" y="176" width="33" height="64" rx="2" fill="#192d1a"/>
+  <line x1="86" y1="176" x2="86" y2="240" stroke="#4ecdc4" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Book 4: tall purple -->
+  <rect x="116" y="146" width="19" height="94" rx="2" fill="#2d1f3d"/>
+  <rect x="116" y="146" width="3" height="94" fill="#9b59b6" opacity="0.65"/>
+
+  <!-- Book 5: medium steel blue -->
+  <rect x="139" y="154" width="23" height="86" rx="2" fill="#1f2d3d"/>
+
+  <!-- Book 6: thin red spine -->
+  <rect x="166" y="168" width="14" height="72" rx="2" fill="#3d2020"/>
+  <rect x="166" y="168" width="3" height="72" fill="#e74c3c" opacity="0.55"/>
+
+  <!-- Box item (LEGO / game box) center -->
+  <rect x="184" y="184" width="44" height="56" rx="3" fill="#192d1a"/>
+  <rect x="184" y="184" width="44" height="8" rx="2" fill="#4ecdc4" opacity="0.3"/>
+  <rect x="189" y="197" width="34" height="1.5" fill="#4ecdc4" opacity="0.18"/>
+  <rect x="189" y="202" width="26" height="1.5" fill="#4ecdc4" opacity="0.18"/>
+  <rect x="189" y="207" width="20" height="1.5" fill="#4ecdc4" opacity="0.18"/>
+
+  <!-- Book 7: tall, gold spine -->
+  <rect x="232" y="140" width="26" height="100" rx="2" fill="#1e3a5f"/>
+  <rect x="232" y="140" width="4" height="100" fill="#c8a96e" opacity="0.6"/>
+
+  <!-- Book 8: medium purple -->
+  <rect x="262" y="158" width="19" height="82" rx="2" fill="#2d1f3d"/>
+
+  <!-- Book 9: warm brown -->
+  <rect x="285" y="152" width="23" height="88" rx="2" fill="#3d2b1f"/>
+  <rect x="285" y="152" width="3" height="88" fill="#c8a96e" opacity="0.75"/>
+
+  <!-- Book 10: wider dark blue -->
+  <rect x="312" y="166" width="30" height="74" rx="2" fill="#1f2d3d"/>
+  <line x1="327" y1="166" x2="327" y2="240" stroke="#4ecdc4" stroke-width="1" opacity="0.2"/>
+
+  <!-- Book 11: tall, teal spine -->
+  <rect x="346" y="143" width="24" height="97" rx="2" fill="#2d1f3d"/>
+  <rect x="346" y="143" width="4" height="97" fill="#4ecdc4" opacity="0.5"/>
+
+  <!-- Small figurine silhouette on top of books -->
+  <circle cx="97" cy="165" r="5" fill="#2a3050"/>
+  <rect x="94" y="170" width="6" height="9" rx="1" fill="#2a3050"/>
+
+  <!-- Label -->
+  <text
+    x="200" y="272"
+    text-anchor="middle"
+    fill="#2a3050"
+    font-size="9.5"
+    font-family="Georgia, serif"
+    letter-spacing="2.5">TROMSØ BRUKTBOKHANDEL</text>
+</svg>
