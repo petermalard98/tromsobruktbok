@@ -221,12 +221,207 @@ async function renderKontakt() {
   }
 }
 
+/* ---- Forside ---- */
+
+async function renderForside() {
+  const onPage = document.getElementById('forside-hero-eyebrow') ||
+                 document.getElementById('forside-galleri-grid');
+  if (!onPage) return;
+
+  try {
+    const res = await fetch('/data/forside.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    const eyebrowEl = document.getElementById('forside-hero-eyebrow');
+    if (eyebrowEl && data.hero_eyebrow) eyebrowEl.textContent = data.hero_eyebrow;
+
+    const overskriftEl = document.getElementById('hero-title');
+    if (overskriftEl && data.hero_overskrift) overskriftEl.textContent = data.hero_overskrift;
+
+    const undertekstEl = document.getElementById('forside-hero-undertekst');
+    if (undertekstEl && data.hero_undertekst) undertekstEl.textContent = data.hero_undertekst;
+
+    const ctaEl = document.getElementById('forside-hero-cta');
+    if (ctaEl && data.hero_cta) ctaEl.textContent = data.hero_cta;
+
+    const omOss1El = document.getElementById('forside-om-oss-1');
+    if (omOss1El && data.om_oss_1) omOss1El.textContent = data.om_oss_1;
+
+    const omOss2El = document.getElementById('forside-om-oss-2');
+    if (omOss2El && data.om_oss_2) omOss2El.textContent = data.om_oss_2;
+
+    const galleriGrid = document.getElementById('forside-galleri-grid');
+    if (galleriGrid && Array.isArray(data.galleri) && data.galleri.length) {
+      galleriGrid.innerHTML = data.galleri.map((img) => `
+        <div class="image-card">
+          <img src="${escapeHTML(img.bilde)}" alt="${escapeHTML(img.alt)}" loading="lazy" width="400" height="300">
+        </div>
+      `).join('');
+    }
+  } catch {
+    /* Fallback til statisk HTML-innhold i index.html */
+  }
+}
+
+/* ---- Butikken ---- */
+
+async function renderButikken() {
+  const onPage = document.getElementById('butikken-kategorier-grid') ||
+                 document.getElementById('butikken-galleri-grid');
+  if (!onPage) return;
+
+  try {
+    const res = await fetch('/data/butikken.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    const kategorierGrid = document.getElementById('butikken-kategorier-grid');
+    if (kategorierGrid && Array.isArray(data.kategorier) && data.kategorier.length) {
+      kategorierGrid.innerHTML = data.kategorier.map((k) => `
+        <div class="category-item">
+          <div class="category-item__name">${escapeHTML(k.navn)}</div>
+          <p class="category-item__desc">${escapeHTML(k.beskrivelse)}</p>
+        </div>
+      `).join('');
+    }
+
+    const galleriGrid = document.getElementById('butikken-galleri-grid');
+    if (galleriGrid && Array.isArray(data.galleri) && data.galleri.length) {
+      galleriGrid.innerHTML = data.galleri.map((img) => `
+        <div class="image-card">
+          <img src="${escapeHTML(img.bilde)}" alt="${escapeHTML(img.alt)}" loading="lazy" width="400" height="300">
+        </div>
+      `).join('');
+    }
+  } catch {
+    /* Fallback til statisk HTML-innhold i butikken.html */
+  }
+}
+
+/* ---- Legoloftet ---- */
+
+async function renderLegoloftet() {
+  const onPage =
+    document.getElementById('lego-kategorier-grid') ||
+    document.getElementById('lego-galleri-grid');
+  if (!onPage) return;
+
+  try {
+    const res = await fetch('/data/legoloftet.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    /* Overskrift og tagline */
+    const overskriftEl = document.getElementById('lego-intro-overskrift');
+    if (overskriftEl && data.intro_overskrift) overskriftEl.textContent = data.intro_overskrift;
+
+    const taglineEl = document.getElementById('lego-tagline');
+    if (taglineEl && data.tagline) taglineEl.textContent = data.tagline;
+
+    /* Introduksjonstekst */
+    const introEl = document.getElementById('lego-intro-tekst');
+    if (introEl && data.intro_tekst) introEl.textContent = data.intro_tekst;
+
+    /* Kategorier */
+    const kategorierGrid = document.getElementById('lego-kategorier-grid');
+    if (kategorierGrid && Array.isArray(data.kategorier) && data.kategorier.length) {
+      kategorierGrid.innerHTML = data.kategorier.map((k) => `
+        <div class="lego-category-card">
+          <div class="lego-category-card__name">${escapeHTML(k.navn)}</div>
+          <p class="lego-category-card__desc">${escapeHTML(k.beskrivelse)}</p>
+        </div>
+      `).join('');
+    }
+
+    /* Galleri */
+    const galleriGrid = document.getElementById('lego-galleri-grid');
+    if (galleriGrid && Array.isArray(data.galleri) && data.galleri.length) {
+      galleriGrid.innerHTML = data.galleri.map((img) => `
+        <div class="lego-gallery__item">
+          <img
+            src="${escapeHTML(img.bilde)}"
+            alt="${escapeHTML(img.alt)}"
+            loading="lazy">
+        </div>
+      `).join('');
+    }
+
+    /* Sitater */
+    const sitatEl = document.getElementById('lego-sitater');
+    if (sitatEl && Array.isArray(data.sitater) && data.sitater.length) {
+      sitatEl.innerHTML = data.sitater.map((s) => `
+        <blockquote class="lego-quote">
+          <p>${escapeHTML(s.tekst)}</p>
+        </blockquote>
+      `).join('');
+    }
+
+    /* Besøkstips */
+    const tipsEl = document.getElementById('lego-besok-tips');
+    if (tipsEl && data.besok_tips) tipsEl.textContent = data.besok_tips;
+
+  } catch {
+    /* Fallback til statisk HTML-innhold i legoloftet.html */
+  }
+
+  /* Åpningstider fra innstillinger.json */
+  const hoursBody = document.getElementById('lego-hours-body');
+  if (!hoursBody) return;
+
+  const norskDager = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
+  const todayNorsk = norskDager[new Date().getDay()];
+
+  try {
+    const res = await fetch('/data/innstillinger.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if (Array.isArray(data.aapningstider)) {
+      hoursBody.innerHTML = data.aapningstider.map((row) => `
+        <tr class="${row.dag === todayNorsk ? 'today' : ''}">
+          <td>${escapeHTML(row.dag)}</td>
+          <td class="${row.stengt ? 'closed' : ''}">${row.stengt ? 'Stengt' : escapeHTML(row.tid)}</td>
+        </tr>
+      `).join('');
+    }
+  } catch {
+    /* Åpningstider vises ikke – ikke kritisk */
+  }
+}
+
+/* ---- Theme toggle ---- */
+
+function initTheme() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  updateToggleIcon(current);
+  btn.addEventListener('click', () => {
+    const curr = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = curr === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateToggleIcon(next);
+  });
+}
+
+function updateToggleIcon(theme) {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.textContent = theme === 'dark' ? '☀' : '☾';
+  btn.setAttribute('aria-label', theme === 'dark' ? 'Bytt til lyst tema' : 'Bytt til mørkt tema');
+}
+
 /* ---- Bootstrap ---- */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  initTheme();
   renderNyeste();
   renderOppdateringer();
   initFilterTabs();
   renderKontakt();
+  renderLegoloftet();
+  renderForside();
+  renderButikken();
 });

@@ -112,7 +112,7 @@ h1, h2, h3 {
 .hero {
   min-height: 62vh;
   display: flex; align-items: center;
-  background: linear-gradient(150deg, #1F1B16 55%, #2a241c 100%);
+  background: linear-gradient(150deg, rgba(31,27,22,.82) 55%, rgba(42,36,28,.88) 100%), url('/images/forside.jpg') center/cover no-repeat;
   position: relative; overflow: hidden; padding: 5rem 0;
 }
 .hero::before {
@@ -275,7 +275,7 @@ h1, h2, h3 {
 .empty-state__icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
 
 /* ---- Page header (inner pages) ---- */
-.page-header { padding: 3rem 0 2.5rem; background: var(--bg-surface); border-bottom: 1px solid var(--border); }
+.page-header { padding: 3rem 0 2.5rem; background: linear-gradient(rgba(31,27,22,.76), rgba(31,27,22,.76)), url('/images/forside.jpg') center/cover no-repeat; border-bottom: 1px solid var(--border); }
 .page-header__eyebrow {
   font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--secondary); margin-bottom: 0.65rem;
@@ -313,4 +313,197 @@ h1, h2, h3 {
   .product-grid { grid-template-columns: 1fr 1fr; }
   .cards { grid-template-columns: 1fr; }
   .hero { min-height: auto; padding: 3.5rem 0; }
+}
+
+/* ---- Legoloftet ---- */
+
+.lego-hero {
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 5rem 0 3.5rem;
+  background:
+    linear-gradient(160deg, rgba(31,27,22,.75) 40%, rgba(42,28,18,.90) 100%),
+    url('/images/legoloftet.jpg') center/cover no-repeat;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.lego-hero__content { position: relative; max-width: 600px; }
+.lego-hero__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+}
+.lego-hero__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  color: var(--primary);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+.lego-hero__tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.lego-intro { max-width: 680px; }
+.lego-intro__heading { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 0.4rem; }
+.lego-intro__text { color: var(--text-muted); font-size: 1rem; line-height: 1.75; margin-top: 0.5rem; }
+
+.lego-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.lego-category-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+  transition: border-color var(--ease);
+}
+.lego-category-card:hover { border-color: var(--primary); }
+.lego-category-card__name {
+  font-family: var(--font-head);
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+.lego-category-card__desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
+.lego-gallery {
+  columns: 3;
+  column-gap: 0.875rem;
+}
+.lego-gallery__item {
+  break-inside: avoid;
+  margin-bottom: 0.875rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.lego-gallery__item img { width: 100%; display: block; transition: transform 0.45s ease; }
+.lego-gallery__item:hover img { transform: scale(1.04); }
+.lego-gallery__placeholder {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.lego-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.lego-quote { border: none; padding: 0; }
+.lego-quote p {
+  font-family: var(--font-head);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.6;
+}
+.lego-quote p::before { content: '\201C'; }
+.lego-quote p::after  { content: '\201D'; }
+
+.lego-besok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.lego-besok h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 0.4rem; }
+.lego-besok__tips {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+.lego-besok__adresse { font-size: 0.88rem; color: var(--text-muted); }
+.lego-besok__hours-heading {
+  font-family: var(--font-head);
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .lego-gallery { columns: 2; }
+  .lego-besok { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 480px) {
+  .lego-gallery { columns: 1; }
+  .lego-categories { grid-template-columns: 1fr; }
+}
+
+[data-theme="light"] .lego-hero {
+  background:
+    linear-gradient(160deg, rgba(244,230,200,.78) 40%, rgba(237,217,163,.88) 100%),
+    url('/images/legoloftet.jpg') center/cover no-repeat;
+}
+
+/* ---- Lyst tema (overrides) ---- */
+[data-theme="light"] {
+  --bg-main:    #F4E6C8;
+  --bg-surface: #EDD9A3;
+  --card:       #FFF8EC;
+  --border:     rgba(140, 90, 43, .2);
+  --primary:    #7a5520;
+  --secondary:  #2a5570;
+  --text-light: #1F1B16;
+  --text-muted: #6b5a40;
+}
+[data-theme="light"] .nav {
+  background: rgba(244, 230, 200, 0.97);
+}
+[data-theme="light"] .hero {
+  background: linear-gradient(150deg, rgba(244,230,200,.80) 55%, rgba(237,217,163,.85) 100%), url('/images/forside.jpg') center/cover no-repeat;
+}
+[data-theme="light"] .page-header {
+  background: linear-gradient(rgba(244,230,200,.80), rgba(244,230,200,.80)), url('/images/forside.jpg') center/cover no-repeat;
+}
+[data-theme="light"] .hero::before {
+  background:
+    radial-gradient(ellipse at 75% 45%, rgba(58,107,138,.05) 0%, transparent 65%),
+    radial-gradient(ellipse at 15% 85%, rgba(122,85,32,.05) 0%, transparent 55%);
+}
+[data-theme="light"] .map-wrapper iframe {
+  filter: none;
+}
+
+/* ---- Tema-toggle knapp ---- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--text-light);
+  transition: border-color var(--ease), background var(--ease);
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+.theme-toggle:hover {
+  border-color: var(--primary);
+  background: rgba(201, 168, 106, .12);
+}
+@media (max-width: 768px) {
+  .theme-toggle { margin-right: 0.25rem; }
 }

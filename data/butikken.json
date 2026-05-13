@@ -1,0 +1,29 @@
+{
+  "kategorier": [
+    {
+      "navn": "Brukte bøker",
+      "beskrivelse": "Norsk- og engelsk litteratur i mange sjangre"
+    },
+    {
+      "navn": "Tegneserier & Manga",
+      "beskrivelse": "Klassiske tegneserier og japansk manga for alle aldersgrupper"
+    },
+    {
+      "navn": "Fantasy & Sci-Fi",
+      "beskrivelse": "Spesialutvalg for fantasyentusiaster og science fiction-elskere"
+    },
+    {
+      "navn": "Brettspill & Kortspill",
+      "beskrivelse": "Strategispill, familiespill og kortspill – komplett med alle brikker"
+    },
+    {
+      "navn": "LEGO",
+      "beskrivelse": "Brukte og sjeldne LEGO-sett, inkludert ettertraktede samleobjekter"
+    },
+    {
+      "navn": "Samleartikler",
+      "beskrivelse": "Figurer og gjenstander fra Star Wars, Harry Potter, Disney og mer"
+    }
+  ],
+  "galleri": []
+}
