@@ -6,7 +6,7 @@
   <meta name="description" content="Tromsø Bruktbokhandel – din lokale spesialbutikk for brukte bøker, tegneserier, LEGO og samleartikler i Tromsø sentrum.">
   <title>Tromsø Bruktbokhandel</title>
   <link rel="stylesheet" href="/css/style.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  <script>/* Forhindrer tema-flimring */(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -15,14 +15,15 @@
     <div class="container nav__inner">
       <a href="/index.html" class="nav__logo" aria-label="Tromsø Bruktbokhandel – til forsiden">
         Tromsø Bruktbokhandel
-        <span>Est. tidlig 1990-tallet</span>
       </a>
       <ul class="nav__links" id="nav-links" role="list">
         <li><a href="/index.html">Forside</a></li>
         <li><a href="/butikken.html">Butikken</a></li>
+        <li><a href="/legoloftet.html">Legoloftet</a></li>
         <li><a href="/oppdateringer.html">Oppdateringer</a></li>
         <li><a href="/kontakt.html">Kontakt</a></li>
       </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Bytt til lyst tema" title="Bytt tema">☀</button>
       <button class="nav__hamburger" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav-links" id="hamburger">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -37,13 +38,13 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero__content">
-          <p class="hero__eyebrow">Tromsø sentrum · Kirkegata 6</p>
-          <h1 class="hero__title" id="hero-title">Din lokale skattekiste for bøker og samleartikler</h1>
-          <p class="hero__subtitle">
-            En unik og tettpakket spesialbutikk for bokelskere, samlere og entusiaster
-            siden tidlig på 1990-tallet. Fantasy, manga, LEGO, brettspill og mye mer.
+          <p class="hero__eyebrow" id="forside-hero-eyebrow">Tromsø sentrum · Kirkegata 6</p>
+          <h1 class="hero__title" id="hero-title">Tromsø Bruktbokhandel – bøker og samleartikler</h1>
+          <p class="hero__subtitle" id="forside-hero-undertekst">
+            Tromsø Bruktbokhandel er byens butikk for bokelskere, samlere og entusiaster.
+            Vi har vært en del av byens kultur siden tidlig på 1990-tallet. Fantasy, manga, LEGO, brettspill og mye mer.
           </p>
-          <a href="/butikken.html" class="hero__cta">Utforsk butikken</a>
+          <a href="/butikken.html" class="hero__cta" id="forside-hero-cta">Utforsk butikken</a>
         </div>
       </div>
     </section>
@@ -54,9 +55,9 @@
         <div class="section-header">
           <h2 id="galleri-title">Fra butikken</h2>
           <div class="divider" aria-hidden="true"></div>
-          <p>En kikk inn i hyllene og utvalget</p>
+          <p>Utvalg av bøker, LEGO, tegneserier og samleartikler</p>
         </div>
-        <div class="image-grid">
+        <div class="image-grid" id="forside-galleri-grid">
           <div class="image-card">
             <img src="/images/placeholder.svg" alt="Bokhyller i butikken" loading="lazy" width="400" height="300">
           </div>
@@ -101,15 +102,15 @@
           <div class="divider" aria-hidden="true"></div>
         </div>
         <div style="max-width:680px">
-          <p style="margin-bottom:1.1rem">
+          <p style="margin-bottom:1.1rem" id="forside-om-oss-1">
             Tromsø Bruktbokhandel er en uavhengig spesialbutikk etablert tidlig på 1990-tallet
             i hjertet av Tromsø. Vi er kjent for vår unike og tettpakkede atmosfære, med et
             bredt utvalg av brukte bøker, tegneserier, manga, brettspill, LEGO-sett og
             samleartikler fra populærkultur.
           </p>
-          <p style="color:var(--text-muted)">
-            Beskrives ofte som en «geek-butikk» – en opplevelse mer enn bare en tradisjonell
-            bokhandel. Hyllene er fylt til randen, og kundene oppfordres til å bruke god tid
+          <p style="color:var(--text-muted)" id="forside-om-oss-2">
+            Vi er ofte beskrevet en «geek-butikk» – litt mer enn bare en tradisjonell
+            bokhandel. Vi oppfordrer alle til å bruke god tid
             på å utforske.
           </p>
           <p style="margin-top:1.5rem">
@@ -128,6 +129,7 @@
       <nav class="footer__links" aria-label="Bunnnavigasjon">
         <a href="/index.html">Forside</a>
         <a href="/butikken.html">Butikken</a>
+        <a href="/legoloftet.html">Legoloftet</a>
         <a href="/oppdateringer.html">Oppdateringer</a>
         <a href="/kontakt.html">Kontakt</a>
         <a href="https://www.facebook.com/profile.php?id=100063525463444" target="_blank" rel="noopener noreferrer">Facebook</a>

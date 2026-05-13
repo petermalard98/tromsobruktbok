@@ -6,7 +6,7 @@
   <meta name="description" content="Tromsø Bruktbokhandel – se hva vi selger: brukte bøker, manga, tegneserier, LEGO-sett, brettspill og samleartikler.">
   <title>Butikken – Tromsø Bruktbokhandel</title>
   <link rel="stylesheet" href="/css/style.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  <script>/* Forhindrer tema-flimring */(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -14,14 +14,15 @@
     <div class="container nav__inner">
       <a href="/index.html" class="nav__logo" aria-label="Tromsø Bruktbokhandel – til forsiden">
         Tromsø Bruktbokhandel
-        <span>Est. tidlig 1990-tallet</span>
       </a>
       <ul class="nav__links" id="nav-links" role="list">
         <li><a href="/index.html">Forside</a></li>
         <li><a href="/butikken.html">Butikken</a></li>
+        <li><a href="/legoloftet.html">Legoloftet</a></li>
         <li><a href="/oppdateringer.html">Oppdateringer</a></li>
         <li><a href="/kontakt.html">Kontakt</a></li>
       </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Bytt til lyst tema" title="Bytt tema">☀</button>
       <button class="nav__hamburger" aria-label="Åpne meny" aria-expanded="false" aria-controls="nav-links" id="hamburger">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -35,12 +36,9 @@
     <!-- PAGE HEADER -->
     <div class="page-header">
       <div class="container">
-        <p class="page-header__eyebrow">Utvalg</p>
+        <p class="page-header__eyebrow">Utvalget vårt</p>
         <h1 class="page-header__title">Butikken</h1>
-        <p class="page-header__subtitle">
-          En tettpakket verden av bøker, spill, tegneserier og samleartikler.
-          Her er det alltid noe nytt å oppdage.
-        </p>
+        <p class="page-header__subtitle">Bøker, tegneserier, LEGO og samleartikler – noe for enhver smak.</p>
       </div>
     </div>
 
@@ -51,34 +49,34 @@
           <h2 id="kategorier-title">Hva vi selger</h2>
           <div class="divider" aria-hidden="true"></div>
         </div>
-        <div class="category-list">
+        <div class="category-list" id="butikken-kategorier-grid">
           <div class="category-item">
-            <div class="category-item__icon" aria-hidden="true">📚</div>
+            
             <div class="category-item__name">Brukte bøker</div>
-            <p class="category-item__desc">Norsk- og engelskspråklig litteratur i mange sjangre – fra klassikere til nyere utgivelser</p>
+            <p class="category-item__desc">Norsk- og engelsk litteratur i mange sjangre</p>
           </div>
           <div class="category-item">
-            <div class="category-item__icon" aria-hidden="true">🦸</div>
+
             <div class="category-item__name">Tegneserier & Manga</div>
-            <p class="category-item__desc">Klassiske tegneserier og japansk manga for alle aldersgrupper</p>
+            <p class="category-item__desc">Klassiske tegneserier og japansk manga for alle aldersgrupper 😊</p>
           </div>
           <div class="category-item">
-            <div class="category-item__icon" aria-hidden="true">🚀</div>
+
             <div class="category-item__name">Fantasy & Sci-Fi</div>
             <p class="category-item__desc">Spesialutvalg for fantasyentusiaster og science fiction-elskere</p>
           </div>
           <div class="category-item">
-            <div class="category-item__icon" aria-hidden="true">🎲</div>
+
             <div class="category-item__name">Brettspill & Kortspill</div>
             <p class="category-item__desc">Strategispill, familiespill og kortspill – komplett med alle brikker</p>
           </div>
           <div class="category-item">
-            <div class="category-item__icon" aria-hidden="true">🧱</div>
+
             <div class="category-item__name">LEGO</div>
             <p class="category-item__desc">Brukte og sjeldne LEGO-sett, inkludert ettertraktede samleobjekter</p>
           </div>
           <div class="category-item">
-            <div class="category-item__icon" aria-hidden="true">⭐</div>
+
             <div class="category-item__name">Samleartikler</div>
             <p class="category-item__desc">Figurer og gjenstander fra Star Wars, Harry Potter, Disney og mer</p>
           </div>
@@ -92,9 +90,9 @@
         <div class="section-header">
           <h2 id="bilder-title">Inne i butikken</h2>
           <div class="divider" aria-hidden="true"></div>
-          <p>Hyllene er fylt fra gulv til tak – det er alltid noe å oppdage</p>
+          
         </div>
-        <div class="image-grid">
+        <div class="image-grid" id="butikken-galleri-grid">
           <div class="image-card">
             <img src="/images/placeholder.svg" alt="Bokhyller i butikken" loading="lazy" width="400" height="300">
           </div>
@@ -137,6 +135,7 @@
       <nav class="footer__links" aria-label="Bunnnavigasjon">
         <a href="/index.html">Forside</a>
         <a href="/butikken.html">Butikken</a>
+        <a href="/legoloftet.html">Legoloftet</a>
         <a href="/oppdateringer.html">Oppdateringer</a>
         <a href="/kontakt.html">Kontakt</a>
         <a href="https://www.facebook.com/profile.php?id=100063525463444" target="_blank" rel="noopener noreferrer">Facebook</a>
