@@ -78,7 +78,7 @@ async function renderNyeste() {
 
     if (!items.length) {
       container.innerHTML =
-        '<div class="empty-state"><div class="empty-state__icon">📚</div><p>Ingen varer registrert ennå – legg til via redigeringspanelet.</p></div>';
+        '<div class="empty-state"><p>Ingen varer registrert ennå – legg til via redigeringspanelet.</p></div>';
       return;
     }
 
@@ -125,7 +125,7 @@ async function renderOppdateringer(filter) {
 
   const kategori = filter || 'Alle';
   container.innerHTML =
-    '<div class="empty-state"><div class="empty-state__icon">⏳</div><p>Laster...</p></div>';
+    '<div class="empty-state"><p>Laster...</p></div>';
 
   try {
     const entries = await fetchOppdateringer();
@@ -135,7 +135,7 @@ async function renderOppdateringer(filter) {
 
     if (!filtered.length) {
       container.innerHTML =
-        '<div class="empty-state"><div class="empty-state__icon">📭</div><p>Ingen oppdateringer i denne kategorien ennå.</p></div>';
+        '<div class="empty-state"><p>Ingen oppdateringer i denne kategorien ennå.</p></div>';
       return;
     }
 

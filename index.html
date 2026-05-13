@@ -84,7 +84,6 @@
         </div>
         <div class="product-grid" id="nyeste-grid" aria-live="polite">
           <div class="empty-state">
-            <div class="empty-state__icon">📚</div>
             <p>Laster...</p>
           </div>
         </div>
@@ -140,18 +139,6 @@
   </footer>
 
   <script src="/js/main.js"></script>
-  <script>
-    /* Redirect to /admin after CMS login */
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', function (user) {
-        if (!user) {
-          window.netlifyIdentity.on('login', function () {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>

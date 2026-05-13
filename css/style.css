@@ -294,6 +294,14 @@ h1, h2, h3 {
 .footer__links a { color: var(--text-muted); }
 .footer__links a:hover { color: var(--primary); }
 
+/* ---- Utilities ---- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+}
+.kontakt-section-heading { margin-bottom: 0.75rem; }
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .nav__links {
@@ -324,7 +332,7 @@ h1, h2, h3 {
   padding: 5rem 0 3.5rem;
   background:
     linear-gradient(160deg, rgba(31,27,22,.75) 40%, rgba(42,28,18,.90) 100%),
-    url('/images/legoloftet.jpg') center/cover no-repeat;
+    url('/images/forside.jpg') center/cover no-repeat;
   border-bottom: 1px solid var(--border);
   position: relative;
 }
@@ -454,7 +462,7 @@ h1, h2, h3 {
 [data-theme="light"] .lego-hero {
   background:
     linear-gradient(160deg, rgba(244,230,200,.78) 40%, rgba(237,217,163,.88) 100%),
-    url('/images/legoloftet.jpg') center/cover no-repeat;
+    url('/images/forside.jpg') center/cover no-repeat;
 }
 
 /* ---- Lyst tema (overrides) ---- */
