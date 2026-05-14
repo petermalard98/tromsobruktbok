@@ -71,7 +71,7 @@ async function renderNyeste() {
   if (!container) return;
 
   try {
-    const res = await fetch('/data/produkter.json');
+    const res = await fetch('data/produkter.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     const items = (data.entries || []).slice(0, 4);
@@ -86,7 +86,7 @@ async function renderNyeste() {
       <div class="product-card">
         <div class="product-card__image">
           <img
-            src="${item.bilde ? escapeHTML(item.bilde) : '/images/placeholder.svg'}"
+            src="${item.bilde ? escapeHTML(item.bilde) : 'images/placeholder.svg'}"
             alt="${escapeHTML(item.navn)}"
             loading="lazy"
             width="240" height="240">
@@ -112,7 +112,7 @@ let _cachedOppdateringer = null;
 
 async function fetchOppdateringer() {
   if (_cachedOppdateringer) return _cachedOppdateringer;
-  const res = await fetch('/data/oppdateringer.json');
+  const res = await fetch('data/oppdateringer.json');
   if (!res.ok) throw new Error('HTTP ' + res.status);
   const data = await res.json();
   _cachedOppdateringer = data.entries || [];
@@ -188,7 +188,7 @@ async function renderKontakt() {
   const todayNorsk = norskDager[new Date().getDay()];
 
   try {
-    const res = await fetch('/data/innstillinger.json');
+    const res = await fetch('data/innstillinger.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
@@ -229,7 +229,7 @@ async function renderForside() {
   if (!onPage) return;
 
   try {
-    const res = await fetch('/data/forside.json');
+    const res = await fetch('data/forside.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
@@ -272,7 +272,7 @@ async function renderButikken() {
   if (!onPage) return;
 
   try {
-    const res = await fetch('/data/butikken.json');
+    const res = await fetch('data/butikken.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
@@ -308,7 +308,7 @@ async function renderLegoloftet() {
   if (!onPage) return;
 
   try {
-    const res = await fetch('/data/legoloftet.json');
+    const res = await fetch('data/legoloftet.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
@@ -373,7 +373,7 @@ async function renderLegoloftet() {
   const todayNorsk = norskDager[new Date().getDay()];
 
   try {
-    const res = await fetch('/data/innstillinger.json');
+    const res = await fetch('data/innstillinger.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     if (Array.isArray(data.aapningstider)) {

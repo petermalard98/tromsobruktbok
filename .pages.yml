@@ -1,6 +1,6 @@
 media:
   input: images/uploads
-  output: /images/uploads
+  output: images/uploads
 
 content:
 
