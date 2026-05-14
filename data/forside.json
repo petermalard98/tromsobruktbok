@@ -5,5 +5,9 @@
   "hero_cta": "Utforsk butikken",
   "om_oss_1": "Tromsø Bruktbokhandel er en uavhengig spesialbutikk etablert tidlig på 1990-tallet i hjertet av Tromsø. Vi er kjent for vår unike og tettpakkede atmosfære, med et bredt utvalg av brukte bøker, tegneserier, manga, brettspill, LEGO-sett og samleartikler fra populærkultur.",
   "om_oss_2": "Vi er ofte beskrevet som en «geek-butikk» – litt mer enn bare en tradisjonell bokhandel. Vi oppfordrer alle til å bruke god tid på å utforske.",
-  "galleri": []
+  "galleri": [
+    {
+      "bilde": "images/uploads/MCDSUMA_UV017-1.jpg"
+    }
+  ]
 }
