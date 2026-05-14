@@ -183,22 +183,13 @@ async function renderKontakt() {
 
   if (!hoursBody && !adresseEl) return;
 
-  /* Determine today's Norwegian day name */
-  const norskDager = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'];
-  const todayNorsk = norskDager[new Date().getDay()];
-
   try {
     const res = await fetch('data/innstillinger.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
-    if (hoursBody && Array.isArray(data.aapningstider)) {
-      hoursBody.innerHTML = data.aapningstider.map((row) => `
-        <tr class="${row.dag === todayNorsk ? 'today' : ''}">
-          <td>${escapeHTML(row.dag)}</td>
-          <td class="${row.stengt ? 'closed' : ''}">${row.stengt ? 'Stengt' : escapeHTML(row.tid)}</td>
-        </tr>
-      `).join('');
+    if (hoursBody && data.aapningstider_tekst) {
+      hoursBody.textContent = data.aapningstider_tekst;
     }
 
     if (adresseEl && data.adresse) adresseEl.textContent = data.adresse;
@@ -224,7 +215,7 @@ async function renderKontakt() {
 /* ---- Forside ---- */
 
 async function renderForside() {
-  const onPage = document.getElementById('forside-hero-eyebrow') ||
+  const onPage = document.getElementById('forside-om-oss') ||
                  document.getElementById('forside-galleri-grid');
   if (!onPage) return;
 
@@ -233,23 +224,14 @@ async function renderForside() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
-    const eyebrowEl = document.getElementById('forside-hero-eyebrow');
-    if (eyebrowEl && data.hero_eyebrow) eyebrowEl.textContent = data.hero_eyebrow;
-
     const overskriftEl = document.getElementById('hero-title');
     if (overskriftEl && data.hero_overskrift) overskriftEl.textContent = data.hero_overskrift;
 
     const undertekstEl = document.getElementById('forside-hero-undertekst');
     if (undertekstEl && data.hero_undertekst) undertekstEl.textContent = data.hero_undertekst;
 
-    const ctaEl = document.getElementById('forside-hero-cta');
-    if (ctaEl && data.hero_cta) ctaEl.textContent = data.hero_cta;
-
-    const omOss1El = document.getElementById('forside-om-oss-1');
-    if (omOss1El && data.om_oss_1) omOss1El.textContent = data.om_oss_1;
-
-    const omOss2El = document.getElementById('forside-om-oss-2');
-    if (omOss2El && data.om_oss_2) omOss2El.textContent = data.om_oss_2;
+    const omOssEl = document.getElementById('forside-om-oss');
+    if (omOssEl && data.om_oss) omOssEl.textContent = data.om_oss;
 
     const galleriGrid = document.getElementById('forside-galleri-grid');
     if (galleriGrid && Array.isArray(data.galleri) && data.galleri.length) {
@@ -312,12 +294,9 @@ async function renderLegoloftet() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
-    /* Overskrift og tagline */
+    /* Overskrift */
     const overskriftEl = document.getElementById('lego-intro-overskrift');
     if (overskriftEl && data.intro_overskrift) overskriftEl.textContent = data.intro_overskrift;
-
-    const taglineEl = document.getElementById('lego-tagline');
-    if (taglineEl && data.tagline) taglineEl.textContent = data.tagline;
 
     /* Introduksjonstekst */
     const introEl = document.getElementById('lego-intro-tekst');
@@ -347,42 +326,20 @@ async function renderLegoloftet() {
       `).join('');
     }
 
-    /* Sitater */
-    const sitatEl = document.getElementById('lego-sitater');
-    if (sitatEl && Array.isArray(data.sitater) && data.sitater.length) {
-      sitatEl.innerHTML = data.sitater.map((s) => `
-        <blockquote class="lego-quote">
-          <p>${escapeHTML(s.tekst)}</p>
-        </blockquote>
-      `).join('');
-    }
-
-    /* Besøkstips */
-    const tipsEl = document.getElementById('lego-besok-tips');
-    if (tipsEl && data.besok_tips) tipsEl.textContent = data.besok_tips;
-
   } catch {
     /* Fallback til statisk HTML-innhold i legoloftet.html */
   }
 
   /* Åpningstider fra innstillinger.json */
-  const hoursBody = document.getElementById('lego-hours-body');
-  if (!hoursBody) return;
-
-  const norskDager = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
-  const todayNorsk = norskDager[new Date().getDay()];
+  const hoursText = document.getElementById('lego-hours-text');
+  if (!hoursText) return;
 
   try {
     const res = await fetch('data/innstillinger.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
-    if (Array.isArray(data.aapningstider)) {
-      hoursBody.innerHTML = data.aapningstider.map((row) => `
-        <tr class="${row.dag === todayNorsk ? 'today' : ''}">
-          <td>${escapeHTML(row.dag)}</td>
-          <td class="${row.stengt ? 'closed' : ''}">${row.stengt ? 'Stengt' : escapeHTML(row.tid)}</td>
-        </tr>
-      `).join('');
+    if (data.aapningstider_tekst) {
+      hoursText.textContent = data.aapningstider_tekst;
     }
   } catch {
     /* Åpningstider vises ikke – ikke kritisk */

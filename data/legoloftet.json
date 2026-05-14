@@ -1,6 +1,5 @@
 {
   "intro_overskrift": "Legoloftet",
-  "tagline": "Øverste etasje er dedikert til LEGO – nye sett, sjeldne funn og samlerobjekter.",
   "intro_tekst": "Legoloftet er butikkens egen vertikal for LEGO-entusiaster. Her finner du alt fra nyere sett til vintage og ettertraktede utgaver som ikke lenger produseres. Hyllene er tette, utvalget skifter, og det er alltid noe nytt å oppdage. Ta deg god tid.",
   "kategorier": [
     {
@@ -20,14 +19,5 @@
       "beskrivelse": "Vintage LEGO, eldre serier og andre gjenstander for den seriøse samler."
     }
   ],
-  "galleri": [],
-  "sitater": [
-    {
-      "tekst": "Her kan du bruke en hel ettermiddag uten å gå tom for ting å se på."
-    },
-    {
-      "tekst": "Utvalget er tettpakket og overraskende – akkurat slik det skal være."
-    }
-  ],
-  "besok_tips": "Ta trappen opp til andre etasje. Loftet er åpent i butikkens ordinære åpningstider."
+  "galleri": []
 }

@@ -92,23 +92,10 @@ content:
         label: Facebook URL
         type: string
         required: false
-      - name: aapningstider
+      - name: aapningstider_tekst
         label: Åpningstider
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{dag}"
-        fields:
-          - name: dag
-            label: Dag
-            type: string
-          - name: tid
-            label: Tid
-            type: string
-          - name: stengt
-            label: Stengt
-            type: boolean
+        description: "Skriv åpningstidene fritt, én linje per dag. F.eks: Man–fre: 10–17"
+        type: text
 
   # ── Legoloftet ────────────────────────────────────────────
   - name: legoloftet
@@ -119,9 +106,6 @@ content:
     fields:
       - name: intro_overskrift
         label: Overskrift
-        type: string
-      - name: tagline
-        label: Tagline
         type: string
       - name: intro_tekst
         label: Introduksjonstekst
@@ -154,20 +138,6 @@ content:
           - name: alt
             label: Alt-tekst
             type: string
-      - name: sitater
-        label: Sitater
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{tekst}"
-        fields:
-          - name: tekst
-            label: Tekst
-            type: text
-      - name: besok_tips
-        label: Besøkstips
-        type: text
 
   # ── Forside ────────────────────────────────────────────────
   - name: forside
@@ -176,23 +146,14 @@ content:
     type: file
     path: data/forside.json
     fields:
-      - name: hero_eyebrow
-        label: Hero – liten tekst over tittel
-        type: string
       - name: hero_overskrift
         label: Hero – hovedoverskrift
         type: string
       - name: hero_undertekst
         label: Hero – undertekst
         type: text
-      - name: hero_cta
-        label: Hero – CTA-knappetekst
-        type: string
-      - name: om_oss_1
-        label: Om oss – avsnitt 1
-        type: text
-      - name: om_oss_2
-        label: Om oss – avsnitt 2
+      - name: om_oss
+        label: Om oss
         type: text
       - name: galleri
         label: Galleri – bilder
